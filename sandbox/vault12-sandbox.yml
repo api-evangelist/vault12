@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/vault12/zax
+sandbox:
+  test_relay:
+    url: https://zt.vault12.com
+    description: >-
+      Vault12 maintains a live public Zax test relay running the latest Zax
+      build. Message expiration on this relay is shortened to 30 minutes so
+      it can be used freely for protocol testing. Confirmed live 2026-07-21
+      (serves the Zax Relay Dashboard at the root).
+    expiration: 30 minutes
+  test_dashboard:
+    url: https://vault12.github.io/zax-dashboard/
+    description: >-
+      Hosted Zax Dashboard sample app (npm zax-dashboard) that uses the
+      glow.ts client library to exercise a relay's mailboxes from the
+      browser — a user-friendly playground against any Zax relay, including
+      the public test relay.
+  self_hosted:
+    description: >-
+      Any developer can run a private relay node from source
+      (https://github.com/vault12/zax, Ruby + Redis + libsodium); each Zax
+      deployment serves the test dashboard from /public.
+notes: >-
+  There is no test-vs-live API key separation because the Zax protocol is
+  credential-free (anonymous proof-of-work session handshake). No magic test
+  values are published beyond the short-expiry public relay.

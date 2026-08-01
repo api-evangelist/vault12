@@ -1,0 +1,32 @@
+# Vault12
+
+> Vault12 is a non-custodial crypto asset security company. Its Vault12 Guard mobile app backs up wallet seed phrases and private keys using Shamir's Secret Sharing across a decentralized network of appointed Guardians, with designated legacy contacts for crypto inheritance — no cloud storage and no custody of funds. Vault12 is not a financial institution, exchange, or custodian.
+
+Vault12's developer surface is open source: the Zax NaCl-based cryptographic relay (asynchronous end-to-end-encrypted "dead drops" between devices), the glow.ts client library for talking to Zax relays, and native Shamir's Secret Sharing implementations. Vault12 also publishes RFC 8414 OAuth 2.0 authorization-server metadata on vault12.com. A public Zax test relay runs at https://zt.vault12.com (30-minute message expiration).
+
+## APIs
+
+- [Zax Cryptographic Relay](https://github.com/vault12/zax): NaCl-based relay API — POST /start_session (proof-of-work handshake), /verify_session, /command (upload, count, download, delete, messageStatus, plus Zax 2.0 file commands: startFileUpload, uploadFileChunk, downloadFileChunk, fileStatus, deleteFile). Public test relay: https://zt.vault12.com
+- [Zax relay technical specification (PDF)](https://s3-us-west-1.amazonaws.com/vault12/crypto_relay.pdf): full protocol spec
+- [Zax 2.0 File Commands](https://github.com/vault12/zax/wiki/Zax-2.0-File-Commands): file-exchange command reference
+- [OAuth 2.0 authorization-server metadata](https://vault12.com/.well-known/oauth-authorization-server): RFC 8414 metadata; endpoints under https://vault12.com/core/users/oauth2/*
+
+## Libraries
+
+- [glow.ts](https://www.npmjs.com/package/glow.ts): TypeScript client library for Zax relays (npm install glow.ts)
+- [zax-dashboard](https://www.npmjs.com/package/zax-dashboard): sample dashboard app for Zax relays; hosted at https://vault12.github.io/zax-dashboard/
+- [capacitor-shamir](https://www.npmjs.com/package/capacitor-shamir): native Shamir's Secret Sharing for iOS/Android/Web
+- [shamir](https://github.com/vault12/shamir): Java and JavaScript Shamir's Secret Sharing over GF(256)
+- [TrueEntropy](https://github.com/vault12/TrueEntropy): high-volume thermal entropy generator for iOS
+- [recovery-utility](https://github.com/vault12/recovery-utility): recover assets from Vault12 Guard exports
+
+## Docs
+
+- [Vault12 website](https://vault12.com/)
+- [Help center](https://vault12.com/help/)
+- [Pricing](https://vault12.com/pricing/)
+- [Blog](https://vault12.com/blog/)
+- [Open source library](https://vault12.com/library/open-source/)
+- [System status](https://status.vault12.com/)
+- [Terms](https://vault12.com/terms/)
+- [Privacy](https://vault12.com/privacy/)

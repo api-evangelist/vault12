@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://vault12.com/.well-known/oauth-authorization-server
+docs: null
+notes: >-
+  Vault12 publishes RFC 8414 OAuth 2.0 authorization-server metadata on
+  vault12.com. The scopes_supported list is the standard OpenID Connect set;
+  no product-specific scopes are published. No public scopes/permissions
+  reference page was found on vault12.com.
+schemes:
+  - name: Vault12 OAuth 2.0 authorization server
+    source: well-known/vault12-oauth-authorization-server.json
+    issuer: https://vault12.com
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://vault12.com/core/users/oauth2/authorize
+        tokenUrl: https://vault12.com/core/users/oauth2/token
+      - flow: implicit
+        authorizationUrl: https://vault12.com/core/users/oauth2/authorize
+      - flow: password
+        tokenUrl: https://vault12.com/core/users/oauth2/token
+      - flow: refresh_token
+        tokenUrl: https://vault12.com/core/users/oauth2/token
+scopes:
+  - scope: openid
+    description: OpenID Connect authentication (id_token issuance, RS256 signed)
+    sources: [well-known/vault12-oauth-authorization-server.json]
+  - scope: profile
+    description: Access to the user's profile claims via the userinfo endpoint
+    sources: [well-known/vault12-oauth-authorization-server.json]
+  - scope: email
+    description: Access to the user's email claims via the userinfo endpoint
+    sources: [well-known/vault12-oauth-authorization-server.json]
+  - scope: offline_access
+    description: Long-lived access via refresh tokens
+    sources: [well-known/vault12-oauth-authorization-server.json]

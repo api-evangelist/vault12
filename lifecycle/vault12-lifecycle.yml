@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.vault12.com/
+status_page: https://status.vault12.com/
+versioning:
+  scheme: null
+  notes: >-
+    No public API versioning policy is published. The Zax relay protocol is
+    versioned informally through the open-source repo (Zax 2.0 added the
+    file-commands family; see https://github.com/vault12/zax/wiki/Zax-2.0-File-Commands).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No deprecation policy or RFC 8594 Sunset-header support is published.
+sla:
+  url: null
+deprecated_operations: []

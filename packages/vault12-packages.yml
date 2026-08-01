@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org/ + https://github.com/vault12
+packages:
+  - language: typescript
+    registry: npm
+    name: glow.ts
+    url: https://www.npmjs.com/package/glow.ts
+    install: npm install glow.ts
+    official: true
+    description: Client library for interacting with Zax Cryptographic Relay Servers
+    latest: 1.1.3
+    repository: https://github.com/vault12/glow.ts
+    publisher: vault12-tech (tech+npm@vault12.io)
+  - language: javascript
+    registry: npm
+    name: zax-dashboard
+    url: https://www.npmjs.com/package/zax-dashboard
+    install: npm install zax-dashboard
+    official: true
+    description: Sample dashboard app for Zax Cryptographic Relay (uses Glow client library)
+    latest: 1.0.19
+    repository: https://github.com/vault12/zax-dashboard
+    publisher: pavlo-liapin (pavlo@vault12.io)
+  - language: typescript
+    registry: npm
+    name: capacitor-shamir
+    url: https://www.npmjs.com/package/capacitor-shamir
+    install: npm install capacitor-shamir
+    official: true
+    description: Native Shamir's Secret Sharing (SSS) for iOS, Android, and Web (Capacitor plugin)
+    latest: 1.0.4
+    repository: https://github.com/vault12/capacitor-shamir
+    publisher: pavlo-liapin (pavlo@vault12.io)
+notes: >-
+  Vault12 ships no hosted-platform REST SDKs; its first-party packages are
+  open-source client libraries around the Zax NaCl-based cryptographic relay
+  (glow.ts, zax-dashboard) and native secret-sharing primitives
+  (capacitor-shamir). The Zax relay server itself is a Ruby app distributed
+  via GitHub (https://github.com/vault12/zax), not a package registry.

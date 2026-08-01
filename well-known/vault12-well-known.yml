@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+hosts:
+  - host: https://vault12.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: vault12-oauth-authorization-server.json
+        note: RFC 8414 authorization-server metadata; issuer https://vault12.com,
+          endpoints under /core/users/oauth2/*, PKCE S256 supported, dynamic
+          client registration endpoint published.
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: https://zt.vault12.com
+    note: Public Zax test relay (see https://github.com/vault12/zax)
+    documents:
+      - path: /.well-known/security.txt
+        status: 503

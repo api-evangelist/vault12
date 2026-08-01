@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://vault12.com/.well-known/oauth-authorization-server
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: RFC 8414 authorization-server metadata published at
+      https://vault12.com/.well-known/oauth-authorization-server
+      (authorization_code, implicit, refresh_token, password grants).
+  - id: rfc8414-authorization-server-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200 with valid metadata JSON.
+  - id: pkce-rfc7636
+    conforms: true
+    evidence: code_challenge_methods_supported includes S256 (and plain).
+  - id: oidc
+    conforms: partial
+    evidence: id_token response types, RS256 id_token signing, userinfo and jwks
+      endpoints, and openid/profile/email scopes are published in the AS metadata,
+      but /.well-known/openid-configuration returns 404 (no OIDC discovery document).
+  - id: oauth2-dynamic-client-registration-rfc7591
+    conforms: true
+    evidence: registration_endpoint published in RFC 8414 metadata.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on vault12.com.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No OpenAPI or error-format documentation published; Zax relay
+      protocol does not use application/problem+json.
+  - id: fapi
+    conforms: false
+    evidence: No FAPI conformance claims found on vault12.com.

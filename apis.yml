@@ -1,8 +1,30 @@
 aid: vault12
 name: Vault12
-description: Vault12 is a company surfaced as a portfolio company of dcvc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Vault12 is a non-custodial crypto asset security company whose Vault12
+  Guard mobile app backs up wallet seed phrases and private keys using
+  Shamir's Secret Sharing across a decentralized network of appointed
+  Guardians, with designated legacy contacts for crypto inheritance — no
+  cloud storage and no custody of funds. Its developer surface is open
+  source, centered on the Zax NaCl-based cryptographic relay (asynchronous
+  end-to-end-encrypted device-to-device messaging and file exchange), the
+  glow.ts client library, and native Shamir's Secret Sharing
+  implementations, plus RFC 8414 OAuth 2.0 authorization-server metadata
+  published on vault12.com and a public Zax test relay at zt.vault12.com.
 url: https://raw.githubusercontent.com/api-evangelist/vault12/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://assets.rbl.ms/27528763/origin.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -10,11 +32,89 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Cryptocurrency
+- Security
+- Backup
+- Inheritance
+- Wallets
+- Cryptography
+- Secret Sharing
+- Key Management
+apis:
+- name: Vault12 Zax Cryptographic Relay API
+  description: >-
+    Open-source NaCl-based cryptographic relay operated as asynchronous
+    "dead drops" for end-to-end-encrypted device-to-device communication.
+    Clients establish anonymous session keys via a proof-of-work handshake
+    (POST /start_session, /verify_session) and then post encrypted commands
+    to /command — upload, count, download, messageStatus, delete, plus the
+    Zax 2.0 file-command family (startFileUpload, uploadFileChunk,
+    downloadFileChunk, fileStatus, deleteFile). Vault12 maintains a public
+    test relay with 30-minute message expiration.
+  humanURL: https://github.com/vault12/zax
+  baseURL: https://zt.vault12.com
+  tags:
+  - Relay
+  - Cryptography
+  - Messaging
+  - File Exchange
+  properties:
+  - type: Documentation
+    url: https://github.com/vault12/zax
+  - type: APIReference
+    url: https://s3-us-west-1.amazonaws.com/vault12/crypto_relay.pdf
+  - type: SourceCode
+    url: https://github.com/vault12/zax
+  - type: Sandbox
+    url: https://zt.vault12.com
+common:
+- type: DomainSecurity
+  url: security/vault12-domain-security.yml
+- type: Website
+  url: https://vault12.com
+- type: Blog
+  url: https://vault12.com/blog/
+- type: Support
+  url: https://vault12.com/help/
+- type: Pricing
+  url: https://vault12.com/pricing/
+- type: TermsOfService
+  url: https://vault12.com/terms/
+- type: PrivacyPolicy
+  url: https://vault12.com/privacy/
+- type: StatusPage
+  url: https://status.vault12.com/
+- type: GitHubOrganization
+  url: https://github.com/vault12
+- type: Packages
+  url: packages/vault12-packages.yml
+- type: SDKs
+  url: packages/vault12-packages.yml
+- type: WellKnown
+  url: well-known/vault12-well-known.yml
+- type: OAuthScopes
+  url: scopes/vault12-scopes.yml
+- type: Authentication
+  url: authentication/vault12-authentication.yml
+- type: Conformance
+  url: conformance/vault12-conformance.yml
+- type: LLMsTxt
+  url: llms/vault12-llms.txt
+- type: Sandbox
+  url: sandbox/vault12-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/vault12-lifecycle.yml
+- type: ChangeLog
+  url: changelog/vault12-changelog.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

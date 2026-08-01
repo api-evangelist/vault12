@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: https://vault12.com/.well-known/oauth-authorization-server
+notes: >-
+  No OpenAPI is published, so this profile is captured from the RFC 8414
+  authorization-server metadata Vault12 publishes on vault12.com plus the
+  open-source Zax relay protocol (https://github.com/vault12/zax). The Zax
+  relay uses no account credentials at all: clients establish per-session
+  NaCl keys via a /start_session proof-of-work handshake and /verify_session,
+  then send session-key-encrypted commands to /command.
+summary:
+  types: [oauth2, session-handshake]
+  oauth2_flows: [authorizationCode, implicit, password, refresh_token]
+  pkce: [plain, S256]
+  token_endpoint_auth_methods: [client_secret_post, client_secret_basic, none]
+schemes:
+  - name: Vault12OAuth2
+    type: oauth2
+    issuer: https://vault12.com
+    authorizationUrl: https://vault12.com/core/users/oauth2/authorize
+    tokenUrl: https://vault12.com/core/users/oauth2/token
+    userinfoUrl: https://vault12.com/core/users/oauth2/user_info
+    registrationUrl: https://vault12.com/core/users/oauth2/register
+    jwksUrl: https://vault12.com/core/users/oauth2/jwks
+    scopes: [openid, profile, email, offline_access]
+    sources: [well-known/vault12-oauth-authorization-server.json]
+  - name: ZaxSessionHandshake
+    type: custom
+    description: >-
+      Anonymous per-session NaCl key establishment on Zax relay nodes:
+      POST /start_session with a random token returns a proof-of-work
+      challenge; POST /verify_session answers it and yields temporary
+      session keys; subsequent POST /command requests are encrypted with
+      the session keys. No long-term credentials or API keys.
+    sources: [https://github.com/vault12/zax]
