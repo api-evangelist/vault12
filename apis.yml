@@ -77,6 +77,9 @@ apis:
   - type: Sandbox
     url: https://zt.vault12.com
 common:
+- type: License
+  name: MIT
+  url: https://github.com/vault12/zax/blob/main/LICENSE
 - type: DomainSecurity
   url: security/vault12-domain-security.yml
 - type: Website
