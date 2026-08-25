@@ -5,7 +5,7 @@
       "source": "https://vault12.com/feeds/feed.rss",
       "feed_url": "https://vault12.com/feeds/feed.rss",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 31,
-  "fetched": "2026-08-15T12:11:08Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
