@@ -12,6 +12,19 @@ description: >-
   implementations, plus RFC 8414 OAuth 2.0 authorization-server metadata
   published on vault12.com and a public Zax test relay at zt.vault12.com.
 url: https://raw.githubusercontent.com/api-evangelist/vault12/refs/heads/main/apis.yml
+deliveryModel:
+  model: open-core
+  license: MIT
+  open_source: true
+  commercial: true
+  callable_host: false
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -77,6 +90,12 @@ apis:
   - type: Sandbox
     url: https://zt.vault12.com
 common:
+- type: IssueTracker
+  url: https://github.com/vault12/zax/issues
+- type: Releases
+  url: https://github.com/vault12/zax/releases
+- type: ContributionGuide
+  url: https://github.com/vault12/zax/blob/main/CONTRIBUTING.md
 - type: License
   name: MIT
   url: https://github.com/vault12/zax/blob/main/LICENSE
